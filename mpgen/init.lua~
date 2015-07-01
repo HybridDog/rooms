@@ -10,6 +10,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 	local c_stonebrick = minetest.get_content_id("default:stonebrick")
 	local c_wood = minetest.get_content_id("default:wood")
 
+	local c_coal = minetest.get_content_id("default:stone_with_coal")
 	local c_iron = minetest.get_content_id("default:stone_with_iron")
 	local c_copper = minetest.get_content_id("default:stone_with_copper")
 	local c_mese = minetest.get_content_id("default:stone_with_mese")
@@ -38,6 +39,8 @@ minetest.register_on_generated(function(minp, maxp, seed)
 								data[pos] = c_mese
 							elseif rnd == 4 then
 								data[pos] = c_diamond
+							elseif rnd == 5 then
+								data[pos] = c_coal
 							else
 								data[pos] = c_stonebrick
 							end
