@@ -8,6 +8,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 	local data = vm:get_data()
 	
 	local c_stonebrick = minetest.get_content_id("default:stonebrick")
+	local c_stone = minetest.get_content_id("default:stone")
 	local c_wood = minetest.get_content_id("default:wood")
 
 	local c_coal = minetest.get_content_id("default:stone_with_coal")
@@ -30,7 +31,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 				if (x % 6) == 0 then
 					if rndX == 1 then
 						if y < -30 then
-							local rnd = math.random(10)
+							local rnd = math.random(20)
 							if rnd == 1 then
 								data[pos] = c_iron
 							elseif rnd == 2 then
@@ -41,6 +42,8 @@ minetest.register_on_generated(function(minp, maxp, seed)
 								data[pos] = c_diamond
 							elseif rnd == 5 then
 								data[pos] = c_coal
+							elseif rnd == 6 or rnd == 7 then
+								data[pos] = c_stone
 							else
 								data[pos] = c_stonebrick
 							end
